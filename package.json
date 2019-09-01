@@ -4,6 +4,10 @@
   "main": "./dist/main.js",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "webpack --mode development && node ./scripts/copy.js",
+    "start": "yarn run build && electron ."
+  },
   "devDependencies": {
     "electron": "^6.0.7",
     "ts-loader": "^6.0.4",
