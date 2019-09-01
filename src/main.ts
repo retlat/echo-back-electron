@@ -1,5 +1,6 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, ipcMain} from 'electron';
 import * as path from 'path';
+import {Channel} from './channel';
 
 let win: BrowserWindow|null = null;
 
@@ -25,4 +26,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+});
+
+ipcMain.on(Channel.ECHO, (event, data) => {
+  event.sender.send(Channel.ECHO_BACK, data);
 });
