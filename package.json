@@ -9,7 +9,7 @@
     "start": "yarn run build && electron ."
   },
   "devDependencies": {
-    "electron": "^6.0.7",
+    "electron": "^7.2.4",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
